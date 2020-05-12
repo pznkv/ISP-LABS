@@ -1,0 +1,5 @@
+C:\Users\TIMMI\RiderProjects\ConsoleApplication4\ConsoleApplication4\bin\Debug\ConsoleApplication4.exe
+C:\Users\TIMMI\RiderProjects\ConsoleApplication4\ConsoleApplication4\bin\Debug\ConsoleApplication4.pdb
+C:\Users\TIMMI\RiderProjects\ConsoleApplication4\ConsoleApplication4\obj\Debug\ConsoleApplication4.csprojAssemblyReference.cache
+C:\Users\TIMMI\RiderProjects\ConsoleApplication4\ConsoleApplication4\obj\Debug\ConsoleApplication4.exe
+C:\Users\TIMMI\RiderProjects\ConsoleApplication4\ConsoleApplication4\obj\Debug\ConsoleApplication4.pdb
