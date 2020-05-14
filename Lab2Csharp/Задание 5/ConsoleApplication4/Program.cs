@@ -15,7 +15,7 @@ namespace ZaglavnieLetters
             int n = stroka.Length, i;
             for (i = 0; i < n; i++)
                 if (char.IsUpper(stroka[i]))
-                    if (stroka[i] > 'A' && stroka[i] < 'Z') continue;
+                    if (stroka[i] >= 'A' && stroka[i] <= 'Z') continue;
                     else Console.Write(stroka[i]);
             Console.ReadKey();
         }
