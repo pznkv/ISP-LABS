@@ -15,7 +15,7 @@ namespace Lab5
         {
             ID = 0;
         }
-        public Spec(string nameValue, int ageValue, string countryValue, courseNum courseValue, string specValue, string subjectValue)
+        public Spec(string nameValue, int ageValue, string countryValue, CourseNum courseValue, string specValue, string subjectValue)
         {
             name = nameValue;
             age = ageValue;
