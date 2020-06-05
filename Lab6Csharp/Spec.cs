@@ -17,16 +17,16 @@ namespace Lab6
         {
             ID = 0;
         }
-        public Spec(string a, int b, string c, courseNum f, string g, string h)
+        public Spec(string nameValue, int ageValue, string countryValue, courseNum courseValue, string specValue, string subjectValue)
         {
-            name = a;
-            age = b;
-            country = c;
+            name = nameValue;
+            age = ageValue;
+            country = countryValue;
             ID = generateID();
-            course = (int)f;
+            course = (int)courseValue;
             av = avMark();
-            specStruct.specName = g;
-            specStruct.mainSub = h;
+            specStruct.specName = specValue;
+            specStruct.mainSub = subjectValue;
         }
 
         public override void getInfo()
