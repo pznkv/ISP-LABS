@@ -46,7 +46,7 @@ namespace Lab3
             return country;
         }
 
-        public void setValue(int ageValue)
+        public void setAge(int ageValue)
         {
             age = ageValue;
         }
