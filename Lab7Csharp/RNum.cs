@@ -2,10 +2,10 @@
 
 namespace Lab7
 {
-    public class RNum : IComparable, IEquatable<RNum>
+    public class RNum : IComparable<T>, IEquatable<RNum>
     {
-        public int Integer { get; set; }
-        public int Natural { get; set; }
+        public int Integer { get;}
+        public int Natural { get;}
 
         public RNum() : this(1, 1)
         {
@@ -116,7 +116,7 @@ namespace Lab7
             return r;
         }
 
-        public static RNum GetNumberFromStr(double a)
+        public static RNum GetNumberFromDouble(double a)
         {
             RNum r = new RNum();
 
