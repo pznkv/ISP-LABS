@@ -3,13 +3,13 @@ namespace Lab5
 {
     class Spec : Student
     {
-        public struct specialty {
+        public struct Specialty {
            public string specName;
            public string mainSub;
 
         }
 
-        public specialty specStruct;
+        public Specialty SpecStruct;
 
         public Spec() : this("Неизвестно",0, "Неизвестно", 0, "Неизвестно", "Неизвестно")
         {
@@ -29,8 +29,8 @@ namespace Lab5
         public override void getInfo()
         {
             base.getInfo();
-            Console.WriteLine($"Специальность: {specStruct.specName}");
-            Console.WriteLine($"Профильный предмет: {specStruct.mainSub}");
+            Console.WriteLine($"Специальность: {SpecStruct.specName}");
+            Console.WriteLine($"Профильный предмет: {SpecStruct.mainSub}");
         }
     }
 }
