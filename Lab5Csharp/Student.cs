@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Lab5
 {
-    enum courseNum
+    enum CourseNum
     {
         First = 1,
         Second,
@@ -16,7 +16,7 @@ namespace Lab5
         public Student() : this("Неизвестно", 0, "Неизвестно", 0)
         {          
         }
-        public Student(string nameValue, int ageValue, string countryValue, courseNum courseValue)
+        public Student(string nameValue, int ageValue, string countryValue, CourseNum courseValue)
         {
             name = nameValue;
             age = ageValue;
