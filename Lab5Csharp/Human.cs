@@ -31,7 +31,7 @@ namespace Lab5
         }
 
 
-        public void setValue(string nameValue, string countryValue)
+        public void setPersonalInfo(string nameValue, string countryValue)
         {
             name = nameValue;
             country = countryValue;
@@ -45,7 +45,7 @@ namespace Lab5
             return country;
         }
 
-        public void setValue(int ageValue)
+        public void setAge(int ageValue)
         {
             age = ageValue;
         }
