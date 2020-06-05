@@ -6,7 +6,7 @@ namespace Lab5
         protected string name;
         protected int age;
         protected string country;
-        public static int ID;
+        public int ID;
 
         public Human() : this("Неизвестно")
         {
