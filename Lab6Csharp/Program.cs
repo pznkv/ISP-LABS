@@ -15,7 +15,7 @@ namespace Lab6
 
             Array.Sort(array);
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < array.Length(); i++)
             {
                 array[i].getInfo();
             }
