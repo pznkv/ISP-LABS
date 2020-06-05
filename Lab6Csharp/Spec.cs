@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Lab6
 {
-    class Spec : Student, IAvMark, IComparable
+    class Spec : Student, IAvMark, IComparable<T>
     {
         public struct specialty
         {
