@@ -15,27 +15,27 @@ namespace Lab7
             Console.WriteLine($"{num2.ShowFull()}");
 
             Console.WriteLine($"1. {num1.FractionStr()} > {num2.FractionStr()} = " + (num1 > num2));
-            Console.WriteLine($"   {num1.RNumStr()} > {num2.RNumStr()} = " + (num1 > num2)+ '\n');
+            Console.WriteLine($"   {num1.ToString()} > {num2.ToString()} = " + (num1 > num2)+ '\n');
             Console.WriteLine($"2. {num1.FractionStr()} < {num2.FractionStr()} = " + (num1 < num2));
-            Console.WriteLine($"   {num1.RNumStr()} < {num2.RNumStr()} = " + (num1 < num2) + '\n');
+            Console.WriteLine($"   {num1.ToString()} < {num2.ToString()} = " + (num1 < num2) + '\n');
             Console.WriteLine($"3. {num1.FractionStr()} >= {num2.FractionStr()} = " + (num1 >= num2));
-            Console.WriteLine($"   {num1.RNumStr()} >= {num2.RNumStr()} = " + (num1 >= num2) + '\n');
+            Console.WriteLine($"   {num1.ToString()} >= {num2.ToString()} = " + (num1 >= num2) + '\n');
             Console.WriteLine($"4. {num1.FractionStr()} <= {num2.FractionStr()} = " + (num1 <= num2));
-            Console.WriteLine($"   {num1.RNumStr()} <= {num2.RNumStr()} = " + (num1 <= num2) + '\n');
+            Console.WriteLine($"   {num1.ToString()} <= {num2.ToString()} = " + (num1 <= num2) + '\n');
             Console.WriteLine($"5. {num1.FractionStr()} == {num2.FractionStr()} = " + (num1 == num2));
-            Console.WriteLine($"   {num1.RNumStr()} == {num2.RNumStr()} = " + (num1 == num2) + '\n');
+            Console.WriteLine($"   {num1.ToString()} == {num2.ToString()} = " + (num1 == num2) + '\n');
             Console.WriteLine($"6. {num1.FractionStr()} != {num2.FractionStr()} = " + (num1 != num2));
-            Console.WriteLine($"   {num1.RNumStr()} != {num2.RNumStr()} = " + (num1 != num2) + '\n');
+            Console.WriteLine($"   {num1.ToString()} != {num2.ToString()} = " + (num1 != num2) + '\n');
             Console.WriteLine($"7. {num1.FractionStr()} + {num2.FractionStr()} = " + (num1 + num2).FractionStr());
-            Console.WriteLine($"   {num1.RNumStr()} + {num2.RNumStr()} = " + (num1 + num2).RNumStr() + '\n');
+            Console.WriteLine($"   {num1.ToString()} + {num2.ToString()} = " + (num1 + num2).ToString() + '\n');
             Console.WriteLine($"8. {num1.FractionStr()} - {num2.FractionStr()} = " + (num1 - num2).FractionStr());
-            Console.WriteLine($"   {num1.RNumStr()} - {num2.RNumStr()} = " + (num1 - num2).RNumStr() + '\n');
+            Console.WriteLine($"   {num1.ToString()} - {num2.ToString()} = " + (num1 - num2).ToString() + '\n');
             Console.WriteLine($"9. {num1.FractionStr()} * {num2.FractionStr()} = " + (num1 * num2).FractionStr());
-            Console.WriteLine($"   {num1.RNumStr()} * {num2.RNumStr()} = " + (num1 * num2).RNumStr() + '\n');
+            Console.WriteLine($"   {num1.ToString()} * {num2.ToString()} = " + (num1 * num2).ToString() + '\n');
             if (num2 != 0)
             {
                 Console.WriteLine($"10. {num1.FractionStr()} / {num2.FractionStr()} = " + (num1 / num2).FractionStr());
-                Console.WriteLine($"   {num1.RNumStr()} / {num2.RNumStr()} = " + (num1 / num2).RNumStr() + '\n');
+                Console.WriteLine($"   {num1.ToString()} / {num2.ToString()} = " + (num1 / num2).ToString() + '\n');
             }
         }
 
@@ -93,7 +93,7 @@ namespace Lab7
             string str = Console.ReadLine();
             double a = CheckNum(str);
 
-            RNum r = RNum.GetNumberFromStr(a);
+            RNum r = RNum.GetNumberFromDouble(a);
             return r;
         }
 
