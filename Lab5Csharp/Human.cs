@@ -11,23 +11,23 @@ namespace Lab5
         public Human() : this("Неизвестно")
         {
         }
-        public Human(string a) : this(a, 0, "Неизвестно")
+        public Human(string nameValue) : this(nameValue, 0, "Неизвестно")
         {
         }
-        public Human(string a, string c) : this(a, 0, c)
+        public Human(string nameValue, string countryValue) : this(nameValue, 0, countryValue)
         {
         }
-        public Human(string a, int b) : this(a, b, "Неизвестно")
+        public Human(string nameValue, int ageValue) : this(nameValue, ageValue, "Неизвестно")
         {
         }
-        public Human(int b, string c) : this("Неизвестно", b, c)
+        public Human(int ageValue, string countryValue) : this("Неизвестно", ageValue, countryValue)
         {
         }
-        public Human(string a, int b, string c)
+        public Human(string nameValue, int ageValue, string countryValue)
         {
-            name = a;
-            age = b;
-            country = c;
+            name = nameValue;
+            age = ageValue;
+            country = countryValue;
         }
 
 
