@@ -16,13 +16,13 @@ namespace Lab6
         public Student() : this("Неизвестно", 0, "Неизвестно", 0)
         {
         }
-        public Student(string a, int b, string c, courseNum f)
+        public Student(string nameValue, int ageValue, string countryValue, courseNum courseValue)
         {
-            name = a;
-            age = b;
-            country = c;
+            name = nameValue;
+            age = ageValue;
+            country = countryValue;
             ID = generateID();
-            course = (int)f;
+            course = (int)courseValue;
         }
 
         public override void getInfo()
