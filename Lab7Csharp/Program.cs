@@ -1,112 +1,65 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
-namespace Lab7
+
+namespace LabRab_7
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Calculate()
         {
-            Console.WriteLine("Enter the first number number: ");
-            var num1 = Enter();
-            Console.WriteLine($"{num1.ShowFull()}");
-
-            Console.WriteLine("Enter the second number number: ");
-            var num2 = Enter();
-            Console.WriteLine($"{num2.ShowFull()}");
-
-            Console.WriteLine($"1. {num1.FractionStr()} > {num2.FractionStr()} = " + (num1 > num2));
-            Console.WriteLine($"   {num1.ToString()} > {num2.ToString()} = " + (num1 > num2)+ '\n');
-            Console.WriteLine($"2. {num1.FractionStr()} < {num2.FractionStr()} = " + (num1 < num2));
-            Console.WriteLine($"   {num1.ToString()} < {num2.ToString()} = " + (num1 < num2) + '\n');
-            Console.WriteLine($"3. {num1.FractionStr()} >= {num2.FractionStr()} = " + (num1 >= num2));
-            Console.WriteLine($"   {num1.ToString()} >= {num2.ToString()} = " + (num1 >= num2) + '\n');
-            Console.WriteLine($"4. {num1.FractionStr()} <= {num2.FractionStr()} = " + (num1 <= num2));
-            Console.WriteLine($"   {num1.ToString()} <= {num2.ToString()} = " + (num1 <= num2) + '\n');
-            Console.WriteLine($"5. {num1.FractionStr()} == {num2.FractionStr()} = " + (num1 == num2));
-            Console.WriteLine($"   {num1.ToString()} == {num2.ToString()} = " + (num1 == num2) + '\n');
-            Console.WriteLine($"6. {num1.FractionStr()} != {num2.FractionStr()} = " + (num1 != num2));
-            Console.WriteLine($"   {num1.ToString()} != {num2.ToString()} = " + (num1 != num2) + '\n');
-            Console.WriteLine($"7. {num1.FractionStr()} + {num2.FractionStr()} = " + (num1 + num2).FractionStr());
-            Console.WriteLine($"   {num1.ToString()} + {num2.ToString()} = " + (num1 + num2).ToString() + '\n');
-            Console.WriteLine($"8. {num1.FractionStr()} - {num2.FractionStr()} = " + (num1 - num2).FractionStr());
-            Console.WriteLine($"   {num1.ToString()} - {num2.ToString()} = " + (num1 - num2).ToString() + '\n');
-            Console.WriteLine($"9. {num1.FractionStr()} * {num2.FractionStr()} = " + (num1 * num2).FractionStr());
-            Console.WriteLine($"   {num1.ToString()} * {num2.ToString()} = " + (num1 * num2).ToString() + '\n');
-            if (num2 != 0)
+            Console.Write("Input first number: ");
+            rational_number Num1 = rational_number.StringToRational(Console.ReadLine());
+            Console.Write("Input second number: ");
+            rational_number Num2 = rational_number.StringToRational(Console.ReadLine());
+            if(Num1 == null || Num2 == null)
             {
-                Console.WriteLine($"10. {num1.FractionStr()} / {num2.FractionStr()} = " + (num1 / num2).FractionStr());
-                Console.WriteLine($"   {num1.ToString()} / {num2.ToString()} = " + (num1 / num2).ToString() + '\n');
-            }
-        }
-
-        public static RNum Enter()
-        {
-            int a;
-            Console.WriteLine("(0 - fraction, 1 - number): ");
-            while (!int.TryParse(Console.ReadLine(), out a) || a < 0 || a > 1)
-            {
-                Console.WriteLine("Incorrect input. Try again.\n");
-            }
-            if (a == 0)
-            {
-                return GetFraction();
+                Console.WriteLine("Input error");
+                Console.ReadKey();
+                return;
             }
             else
             {
-                return GetNum();
+                rational_number a = Num1 + Num2;
+                Console.WriteLine($"Addiction: {(int)(Num1 + Num2)} or {(double)(Num1 + Num2)} or {(Num1 + Num2).ToString()}");
+                Console.WriteLine($"Subtraction: {(int)(Num1 - Num2)} or {(double)(Num1 - Num2)} or {(Num1 - Num2).ToString()}");
+                Console.WriteLine($"Multiplication: {(int)(Num1 * Num2)} or {(double)(Num1 * Num2)} or {(Num1 * Num2).ToString()}");
+                Console.WriteLine($"Division: {(int)(Num1 / Num2)} or {(double)(Num1 / Num2)} or {(Num1 / Num2).ToString()}");
+                Console.WriteLine($"Comparison:");
+                Console.WriteLine($"{Num1.ToString()} < {Num2.ToString()} --- {Num1 < Num2}");
+                Console.WriteLine($"{Num1.ToString()} > {Num2.ToString()} --- {Num1 > Num2}");
+                Console.WriteLine($"{Num1.ToString()} <= {Num2.ToString()} --- {Num1 <= Num2}");
+                Console.WriteLine($"{Num1.ToString()} >= {Num2.ToString()} --- {Num1 >= Num2}");
+                Console.WriteLine($"{Num1.ToString()} == {Num2.ToString()} --- {Num1.Equals(Num2)}");
+                Console.WriteLine($"{Num1.ToString()} != {Num2.ToString()} --- {!Num1.Equals(Num2)}");
+                Console.ReadKey();
             }
-
         }
 
-        public static RNum GetFraction()
+        static void Main(string[] args)
         {
-            Console.WriteLine("Fraction: ");
-            string str = Console.ReadLine();
-            while (!CheckFraction(str))
+            int Choice;
+            do
             {
-                Console.Write("Incorrect input, repeat: ");
-                str = Console.ReadLine();
-            }
-
-            RNum r = RNum.GetFractionFromStr(str);
-            return r;
+                Console.Clear();
+                Console.WriteLine("1. Input two rational numbers and show all operation");
+                Console.WriteLine("2. Exit");
+                Console.WriteLine("Input your choice: ");
+                Choice = Convert.ToInt32(Console.ReadLine());
+                switch (Choice)
+                {
+                    case 1:
+                        Console.Clear();
+                        Calculate();
+                        break;
+                    case 2:
+                        return;
+                }
+            } while (Choice != 2);
         }
-
-        public static bool CheckFraction(string str)
-        {
-            if (String.IsNullOrEmpty(str))
-            {
-                return false;
-            }
-            for (int i = 0; i < str.Length; i++)
-            {
-                if (i == 0 && str[i] == '-') i++;
-                if (str[i] == '/' && i != str.Length - 1) i++;
-                if (!char.IsDigit(str[i]) || (str[i] == '0' && i == str.Length - 1 && str[i - 1] == '/')) return false;
-            }
-            return true;
-        }
-
-        public static RNum GetNum()
-        {
-            Console.WriteLine("Number: ");
-            string str = Console.ReadLine();
-            double a = CheckNum(str);
-
-            RNum r = RNum.GetNumberFromDouble(a);
-            return r;
-        }
-
-        public static double CheckNum(string str)
-        {
-            double a;
-            while(!double.TryParse(str, out a))
-            {
-                Console.Write("Incorrect input, repeat: ");
-                str = Console.ReadLine();
-            }
-            return a;
-        }
-
     }
 }
